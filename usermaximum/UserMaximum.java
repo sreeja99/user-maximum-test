@@ -3,8 +3,8 @@ package com.usermaximum;
 import java.util.Scanner;
 
 public class UserMaximum {
-	//method for finding maximum integer
-		public static Integer findMaximum(Integer x,Integer y,Integer z) {
+		//method for finding maximum float
+		public static Float findMaximum(Float x,Float y,Float z) {
 			int a = x.compareTo(y);
 			int b = y.compareTo(z);
 			int c = x.compareTo(z);
@@ -15,21 +15,21 @@ public class UserMaximum {
 			else if(b==-1&&c==-1)
 				return z;
 			else 
-				return 0;
+				return 0.0f;
 		}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome");
+		Scanner sc=new Scanner(System.in);
 		//taking input
-			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter the first number:");
-			int x= sc.nextInt();
-			System.out.println("Enter the second number:");
-			int y= sc.nextInt();
-			System.out.println("Enter the third number:");
-			int z= sc.nextInt();
-			//printing highest integer
-			System.out.println("Return the maximum integer element:"+findMaximum(x,y,z));
+		System.out.println("Enter the first number:");
+		float x= sc.nextFloat();
+		System.out.println("Enter the second number:");
+		float y= sc.nextFloat();
+		System.out.println("Enter the third number:");
+		float z= sc.nextFloat();
+		//printing highest float
+		System.out.println("Maximum float element:"+findMaximum(x,y,z));
 
 	}
 
