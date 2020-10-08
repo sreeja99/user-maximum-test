@@ -7,52 +7,53 @@ import org.junit.jupiter.api.Test;
 import junit.framework.Assert;
 
 class UserMaximumTest {
+	UserMaximum obj;
 	@Test
 	void CheckMaxIntegerAtFirstPosition() {
-		int max =UserMaximum.findMaximum(8,4,7);
-		Assert.assertEquals(8,max);
+		UserMaximum obj=new UserMaximum <Integer>(9,8,7);
+		Assert.assertEquals(9,obj.toPrint());
 	}
 	@Test
 	void CheckMaxIntegerAtSecondPosition() {
-		int max =UserMaximum.findMaximum(8,9,7);
-		Assert.assertEquals(9,max);
+		UserMaximum obj=new UserMaximum <Integer>(8,9,7);
+		Assert.assertEquals(9,obj.toPrint());
 	}
 	@Test
 	void CheckMaxIntegerAtThirdPosition() {
-		int max =UserMaximum.findMaximum(7,4,8);
-		Assert.assertEquals(8,max);
+		UserMaximum obj=new UserMaximum <Integer>(7,8,9);
+		Assert.assertEquals(9,obj.toPrint());
 	}
 	@Test
 	void CheckMaxFloatAtFirstPosition() {
-		float max =UserMaximum.findMaximum(8.3f,4.4f,7.1f);
-		Assert.assertEquals(8.3f,max);
+		UserMaximum obj=new UserMaximum <Float>(9.3f,8.3f,7.3f);
+		Assert.assertEquals(9.3f,obj.toPrint());
 	}
 	@Test
 	void CheckMaxFloatAtSecondPosition() {
-		float max =UserMaximum.findMaximum(8.1f,9.4f,7.3f);
-		Assert.assertEquals(9.4f,max);
+		UserMaximum obj=new UserMaximum <Float>(8.1f,9.4f,7.3f);
+		Assert.assertEquals(9.4f,obj.toPrint());
 	}
 	@Test
 	void CheckMaxFloatAtThirdPosition() {
-		float max =UserMaximum.findMaximum(7.3f,4.5f,8.5f);
-		Assert.assertEquals(8.5f,max);
+		UserMaximum obj=new UserMaximum <Float>(7.3f,4.5f,8.5f);
+		Assert.assertEquals(8.5f,obj.toPrint());
 	}
 	@Test
 	public void CheckMaxStringAtFirstPosition1() {
-		String max = UserMaximum.findMaximum("Peach", "Apple", "Banana");
-		assertEquals("Peach", max);
+		UserMaximum obj=new UserMaximum <String>("Peach", "Apple", "Banana");
+		assertEquals("Peach", obj.toPrint());
 	}
 
 	@Test
 	public void CheckMaxStringAtSecondPosition() {
-		String max = UserMaximum.findMaximum("Apple", "Peach", "Banana");
-		assertEquals("Peach", max);
+		UserMaximum obj=new UserMaximum <String>("Apple", "Peach", "Banana");
+		assertEquals("Peach", obj.toPrint());
 	}
 
 	@Test
 	public void CheckMaxStringAtThirdPosition() {
-		String max = UserMaximum.findMaximum("Apple", "Banana", "Peach");
-		assertEquals("Peach", max);
+		UserMaximum obj=new UserMaximum <String>("Apple", "Banana", "Peach");
+		assertEquals("Peach", obj.toPrint());
 	}
 
 }
