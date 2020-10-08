@@ -9,19 +9,19 @@ import junit.framework.Assert;
 class UserMaximumTest {
 
 	@Test
-	void CheckMaxFloatAtFirstPosition() {
-		float max =UserMaximum.findMaximum(8.3f,4.4f,7.1f);
-		Assert.assertEquals(8.3f,max);
+	void CheckMaxStringAtFirstPosition() {
+		String max =UserMaximum.findMaximum("Peach","Apple","Banana");
+		Assert.assertEquals("peach",max);
 	}
 	@Test
-	void CheckMaxFloatAtSecondPosition() {
-		float max =UserMaximum.findMaximum(8.1f,9.4f,7.3f);
-		Assert.assertEquals(9.4f,max);
+	void CheckMaxStringAtSecondPosition() {
+		String max =UserMaximum.findMaximum("Apple", "Peach","Banana");
+		Assert.assertEquals("peach",max);
 	}
 	@Test
-	void CheckMaxFloatAtThirdPosition() {
-		float max =UserMaximum.findMaximum(7.3f,4.5f,8.5f);
-		Assert.assertEquals(8.5f,max);
+	void CheckMaxStringAtThirdPosition() {
+		String max =UserMaximum.findMaximum("Apple","Banana", "Peach");
+		Assert.assertEquals("peach",max);
 	}
 
 }

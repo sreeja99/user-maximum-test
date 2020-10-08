@@ -3,34 +3,28 @@ package com.usermaximum;
 import java.util.Scanner;
 
 public class UserMaximum {
-		//method for finding maximum float
-		public static Float findMaximum(Float x,Float y,Float z) {
-			int a = x.compareTo(y);
-			int b = y.compareTo(z);
-			int c = x.compareTo(z);
-			if(a==1&&c==1)
-				return x;
-			else if(b==1&&a==-1) 
-				return y;
-			else if(b==-1&&c==-1)
-				return z;
-			else 
-				return 0.0f;
-		}
+		//method for finding maximum String
+	public static String findMaximum(String x,String y,String z) {
+		String max = x;
+		if(y.compareTo(x)>0)
+			max =y;
+		if(z.compareTo(x)>0)
+			max =z;
+		return max;
+	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome");
 		Scanner sc=new Scanner(System.in);
 		//taking input
-		System.out.println("Enter the first number:");
-		float x= sc.nextFloat();
-		System.out.println("Enter the second number:");
-		float y= sc.nextFloat();
-		System.out.println("Enter the third number:");
-		float z= sc.nextFloat();
-		//printing highest float
-		System.out.println("Maximum float element:"+findMaximum(x,y,z));
-
+		System.out.println("Enter the first string:");
+		String x= sc.nextLine();
+		System.out.println("Enter the second string:");
+		String y= sc.nextLine();
+		System.out.println("Enter the third string:");
+		String z= sc.nextLine();
+		//printing highest String
+		System.out.println("Maximum String"+findMaximum(x,y,z));
 	}
 
 }
