@@ -10,50 +10,77 @@ class UserMaximumTest {
 	UserMaximum obj;
 	@Test
 	void CheckMaxIntegerAtFirstPosition() {
-		UserMaximum obj=new UserMaximum <Integer>(9,8,7);
-		Assert.assertEquals(9,obj.toPrint());
+		UserMaximum<Integer> obj=new UserMaximum <Integer>();
+		obj.findMaximum(9,8,7);
+		Assert.assertEquals(9,(int)obj.toPrint());
 	}
 	@Test
 	void CheckMaxIntegerAtSecondPosition() {
-		UserMaximum obj=new UserMaximum <Integer>(8,9,7);
-		Assert.assertEquals(9,obj.toPrint());
+		UserMaximum<Integer> obj=new UserMaximum <Integer>();
+		obj.findMaximum(8,9,7);
+		Assert.assertEquals(9,(int)obj.toPrint());
 	}
 	@Test
 	void CheckMaxIntegerAtThirdPosition() {
-		UserMaximum obj=new UserMaximum <Integer>(7,8,9);
-		Assert.assertEquals(9,obj.toPrint());
+		UserMaximum<Integer> obj=new UserMaximum <Integer>();
+		obj.findMaximum(5,8,9);
+		Assert.assertEquals(9,(int)obj.toPrint());
+	}
+	@Test
+	void checkForMoreThanThreeEntries() {
+		UserMaximum<Integer> obj=new UserMaximum <Integer>();
+		obj.findMaximum(5,8,9,4,5);
+		Assert.assertEquals(9,(int)obj.toPrint());
 	}
 	@Test
 	void CheckMaxFloatAtFirstPosition() {
-		UserMaximum obj=new UserMaximum <Float>(9.3f,8.3f,7.3f);
-		Assert.assertEquals(9.3f,obj.toPrint());
+		UserMaximum<Float> obj=new UserMaximum <Float>();
+		obj.findMaximum(9.4f,8.5f,7.6f);
+		Assert.assertEquals(9.4f,(float)obj.toPrint());
 	}
 	@Test
 	void CheckMaxFloatAtSecondPosition() {
-		UserMaximum obj=new UserMaximum <Float>(8.1f,9.4f,7.3f);
-		Assert.assertEquals(9.4f,obj.toPrint());
+		UserMaximum<Float> obj=new UserMaximum <Float>();
+		obj.findMaximum(8.4f,9.5f,7.6f);
+		Assert.assertEquals(9.5f,(float)obj.toPrint());
 	}
 	@Test
 	void CheckMaxFloatAtThirdPosition() {
-		UserMaximum obj=new UserMaximum <Float>(7.3f,4.5f,8.5f);
-		Assert.assertEquals(8.5f,obj.toPrint());
+		UserMaximum<Float> obj=new UserMaximum <Float>();
+		obj.findMaximum(2.4f,8.5f,9.4f);
+		Assert.assertEquals(9.4f,(float)obj.toPrint());
+	}
+	@Test
+	void CheckFloatForMoreThanThreeValues() {
+		UserMaximum<Float> obj=new UserMaximum <Float>();
+		obj.findMaximum(9.4f,8.5f,7.6f,6.3f,7.8f);
+		Assert.assertEquals(9.4f,(float)obj.toPrint());
 	}
 	@Test
 	public void CheckMaxStringAtFirstPosition1() {
-		UserMaximum obj=new UserMaximum <String>("Peach", "Apple", "Banana");
-		assertEquals("Peach", obj.toPrint());
+		UserMaximum<String> obj=new UserMaximum <String>();
+		obj.findMaximum("Peach","Apple","Banana");
+		Assert.assertEquals("Peach",obj.toPrint());
 	}
 
 	@Test
 	public void CheckMaxStringAtSecondPosition() {
-		UserMaximum obj=new UserMaximum <String>("Apple", "Peach", "Banana");
-		assertEquals("Peach", obj.toPrint());
+		UserMaximum<String> obj=new UserMaximum <String>();
+		obj.findMaximum("Apple","Peach","Banana");
+		Assert.assertEquals("Peach",obj.toPrint());
 	}
 
 	@Test
 	public void CheckMaxStringAtThirdPosition() {
-		UserMaximum obj=new UserMaximum <String>("Apple", "Banana", "Peach");
-		assertEquals("Peach", obj.toPrint());
+		UserMaximum<String> obj=new UserMaximum <String>();
+		obj.findMaximum("Banana","Apple","Peach");
+		Assert.assertEquals("Peach",obj.toPrint());
+	}
+	@Test
+	public void CheckForMoreThanThreeValuesStrings() {
+		UserMaximum<String> obj=new UserMaximum <String>();
+		obj.findMaximum("Banana","Apple","Peach","Orange","Kiwi");
+		Assert.assertEquals("Peach",obj.toPrint());
 	}
 
 }

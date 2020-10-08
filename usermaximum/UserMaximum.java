@@ -1,25 +1,20 @@
 package com.usermaximum;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class UserMaximum<E extends Comparable<E>> {
 	E x,y,z;
 	E max;
-	public UserMaximum(E x,E y,E z) {
-		this.x=x;
-		this.y=y;
-		this.z=z;
+	public UserMaximum() {
 	}
 	public E toPrint() {
-		return this.findMaximum(x,y,z);
+		return this.max;
 	}
 	
-	private E findMaximum(E x, E y, E z) {
-		E max=x;
-		if(y.compareTo(max)>0)
-			max=y;
-		if(z.compareTo(max)>0)
-			max=z;
+	E findMaximum(E ... args) {
+		Arrays.sort(args);
+		this.max = args[args.length-1];
 		return max;
 	}
 
@@ -34,7 +29,7 @@ public class UserMaximum<E extends Comparable<E>> {
 		System.out.println("Enter the third value:");
 		String z= sc.nextLine();
 		//printing highest value
-		System.out.println("Maximum Value:"+new UserMaximum(x,y,z).toPrint());
+		System.out.println("Maximum Value:"+new UserMaximum().toPrint());
 	}
 
 }
